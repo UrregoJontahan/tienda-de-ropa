@@ -1,0 +1,68 @@
+.container-images{
+    position: relative;
+    display: flex;
+    padding: 8rem;
+    flex-flow: row wrap;
+    justify-content: center;
+    left: 4rem;
+}
+
+.card{
+    position: relative;
+    display: flex;
+    margin: 1.5rem;
+    margin-top: .2rem;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    left: 3rem;
+}
+
+.images-producs{
+    display: flex;
+    width: 300px;
+    height: 300px;
+}
+
+.images-producs img{
+    width: 100%;
+    height: auto;
+}
+
+.add-cart{
+    position: relative;
+    height: 3rem;
+    background-color: rgba(30, 190, 5, 0.725);
+    bottom: 3rem;
+    text-shadow: 2px 5px 5px black;
+    opacity: 0;
+    transition: .3s ease;
+    outline: none;
+    border: none;
+}
+
+.add-cart:hover{
+    opacity: 1;
+}
+
+.text{
+    position: relative;
+    bottom: .7rem;
+    font-family:Arial, Helvetica, sans-serif ;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

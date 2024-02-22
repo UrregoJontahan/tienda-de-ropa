@@ -1,0 +1,18 @@
+.input-search{
+    display: flex;
+    position: fixed;
+    left: 17%;
+    width: 30%;
+    height: 2rem;
+    top: 1.5rem;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    text-align: center;
+    box-shadow: 2px 2px 10px 2px rgb(103, 102, 102);
+    z-index: 12;
+}
+
+.input-search:hover{
+    outline: 1px solid rgb(66, 156, 240);
+}
