@@ -1,20 +1,20 @@
 import React from 'react';
 import { DataProvider } from './Provider';
 import { Header } from './Header';
-import { InputSearch } from './Header/Search';
+import { InputSearch } from './Search';
 import { ListProducts } from './ListProducts';
-import { Home } from './counterCate_Prod';
+import { Category } from './Categories/Category';
+import { User } from './Header/Users/User';
 
 function App() {
  return (
-   <DataProvider>
-        <Header/>
-        <InputSearch/>
-        <ListProducts/>
-        <Home>
-          
-        </Home>
-   </DataProvider>
+  <DataProvider>
+      <User/>
+      <Header/>
+      <InputSearch/>
+      <ListProducts/>
+      <Category/>
+  </DataProvider>
  )
 }
 

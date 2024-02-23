@@ -1,7 +1,7 @@
 .counter-header{
     padding: .5rem;
     display: flex;
-    background-color: rgb(220, 98, 17);
+    background-color: rgb(220, 17, 54);
     width: 100%;
     align-items: center;
     flex-shrink: 0;
@@ -9,30 +9,13 @@
     position: fixed;
     z-index: 10;
 }
-.home{
-    padding: 0;
-    display: flex;
-    margin: 0;
-    width: 10%;
-    align-items: center;
-}
 
 .logo{
     position: relative;
     display: flex;
     width: 70px;
     border-radius: 50%;
-    left: 3.5rem;
+    left: 10rem;
 }
 
-svg.icon-hamburguer{
-    cursor: pointer;
-    position: relative;
-    width: 30%;
-    height: auto;
-    left: 1.5rem;
-}
 
-.icon-hamburguer:hover{
-    color: rgb(76, 78, 79);
-}

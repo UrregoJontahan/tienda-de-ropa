@@ -4,24 +4,29 @@
     padding: 8rem;
     flex-flow: row wrap;
     justify-content: center;
-    left: 4rem;
 }
 
 .card{
     position: relative;
     display: flex;
-    margin: 1.5rem;
-    margin-top: .2rem;
+    margin:.7rem;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     left: 3rem;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 5px 3px 15px 2px grey;
+    transition: .3s ease;
+
 }
 
 .images-producs{
     display: flex;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 250px;
+    position: relative;
+    top: .8rem;
 }
 
 .images-producs img{
@@ -33,7 +38,6 @@
     position: relative;
     height: 3rem;
     background-color: rgba(30, 190, 5, 0.725);
-    bottom: 3rem;
     text-shadow: 2px 5px 5px black;
     opacity: 0;
     transition: .3s ease;
@@ -41,9 +45,13 @@
     border: none;
 }
 
-.add-cart:hover{
-    opacity: 1;
+.card:hover{
+    transform: scale(1,1.02);
+    .add-cart{
+        opacity: 1;
+    }
 }
+
 
 .text{
     position: relative;

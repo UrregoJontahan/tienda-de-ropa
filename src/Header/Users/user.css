@@ -1,0 +1,25 @@
+.counter-user{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    top: .8rem;
+    z-index: 12;
+    left: 94%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.image-user{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+}
+
+.username{
+    position: fixed;
+    left: 87%;
+    font-size: 30px;
+}

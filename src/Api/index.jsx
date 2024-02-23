@@ -1,19 +1,22 @@
-import { useState, useEffect } from "react";
-
-const useGetProductsApi =() => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
+  async function useGetProductsApi(){
     const response = await fetch("https://fakestoreapi.com/products");
-    const jsonData = await response.json();
-    setData(Array.isArray(jsonData)?jsonData:[]);
-};
+    const data = await response.json();
 
   return data;
 };
 
-export { useGetProductsApi };
+async function Users(){
+  const response = await fetch  ("https://fakestoreapi.com/users/1");
+  const jsonData = await response.json();
+  
+  return jsonData
+}
+
+async function categoriesApi(){
+  const response = await fetch  ("https://fakestoreapi.com/products/categories");
+  const jsonData = await response.json();
+
+return jsonData
+}
+
+export { useGetProductsApi, Users, categoriesApi };

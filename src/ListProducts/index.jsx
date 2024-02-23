@@ -1,18 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./listProducts.css"
-import { useGetProductsApi } from "../Api";
+import { DataContext } from "../Provider";
 
 function ListProducts(){
 
-    const products = useGetProductsApi()
+    const {products} = useContext(DataContext)
 
     return(
         <div className="container-images">
             {products.map((product)=>(
-                <div className="card">
+                <div className="card"
+                    key={product.id}
+                >
                     <img 
                     className="images-producs"
-                    key={product.id}
                     src={product.image}
                     />
                     <button
