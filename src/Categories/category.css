@@ -1,12 +1,12 @@
 .category-header{
     display: flex;
     position: absolute;
-    left: 3rem;
+    justify-content:first baseline ;
+    left: .5rem;
     width: 200px;
     text-align: center;
-    top: 10rem;
     border-right:2px solid rgb(122, 119, 119) ;
-    
+    top:13rem;
 }
 
 .categories-section{

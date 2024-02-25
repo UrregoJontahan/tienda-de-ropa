@@ -4,7 +4,7 @@
     height: 60px;
     top: .8rem;
     z-index: 12;
-    left: 94%;
+    left: 87%;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -20,6 +20,6 @@
 
 .username{
     position: fixed;
-    left: 87%;
+    left: 80%;
     font-size: 30px;
 }

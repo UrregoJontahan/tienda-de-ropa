@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./user.css"
-import { DataContext } from "../../Provider";
+import { DataContext } from "../Provider";
 
 function User(){
     const {user} = useContext(DataContext)
