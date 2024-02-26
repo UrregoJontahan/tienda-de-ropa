@@ -25,5 +25,5 @@
 .list-categories:hover{
     transform: scale(1,1.1);
     color: crimson;background-color: rgb(225, 222, 222);
-
+    text-decoration: underline;
 }

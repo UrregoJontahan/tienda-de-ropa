@@ -1,19 +1,11 @@
 import React, { useContext, useState } from "react";
 import "./listProducts.css"
 import { DataContext } from "../Provider";
+import { Modal } from "../Modal";
 
-function ListProducts(){
+function ListProducts({ showDetails }){
 
     const {filterProducts} = useContext(DataContext)
-    const [details, setDetails] = useState(null)
-
-    const showDetails=(product)=>{
-        setDetails(product)
-    }
-
-    const closedDetails=()=>{
-        setDetails(null)
-    }
 
     return(
         <div className="container-images">
@@ -37,19 +29,6 @@ function ListProducts(){
                     className="add-cart">
                         <p className="text">Agregar al carrito</p>
                     </button>
-                   
-                   {details && details.id === product.id && (
-                    <div className="description">
-                        <button className="closed"
-                            onClick={()=>closedDetails(null)}
-                        >
-                            x
-                        </button>
-                        <p className="description-text">
-                            {product.description}
-                        </p>
-                    </div>
-                   )}
                 </div>
             ))}
         </div>

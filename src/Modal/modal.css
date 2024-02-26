@@ -1,0 +1,128 @@
+.Modal{
+    text-align: center;
+    align-items: center;
+    z-index: 1;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(159, 155, 155, 0.973);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white;
+    font-size: 50px;
+}
+
+.container{
+    display: flex;
+    width: 800px;
+    height: 600px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px 2px rgb(97, 96, 96);
+    background-color: rgb(230, 224, 224);
+}
+
+.image-modal{
+    position: fixed;
+    display: flex;
+    top: 8rem;
+    width: 200px;
+    height: 250px;
+}
+.description{
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    text-align: center; 
+    align-items: center;
+    font-size: 20px;
+    width: 700px;
+    height: 500px;
+}
+
+.description-text{
+    color: rgb(10, 10, 10);
+    position: fixed;
+    display: flex;
+    top: 28rem;
+    width: 500px;
+    height: auto;
+}
+
+.details{
+    position: relative;
+    display: flex;
+    left: .5rem;
+    border-radius: 5px;
+    border: 1px solid rgb(76, 73, 73);
+    transition: .2s ease;
+}
+
+.details:hover{
+    background-color: rgb(94, 91, 91);
+    color: white;
+    box-shadow: 1px 2px 10px 1px grey;
+}
+
+
+.closed{
+    position: relative;
+    bottom: 14.5rem;
+    left: 55%;
+    display:flex ;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius:5px ;
+    background-color: rgba(90, 86, 86, 0.71);
+    border: none;
+    color: white;
+    font-size: 30px;
+}
+
+.closed:hover{
+    box-shadow: 1px 2px 10px 1px grey;
+    background-color: rgba(232, 12, 12, 0.519);
+    color: black;
+}
+
+.price-modal{
+    display: flex;
+    position: fixed;
+    top: 20.5rem;
+    left: 38rem;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.btn-modal{
+    position: relative;
+    height: 2rem;
+    background-color: rgb(19, 18, 18);
+    transition: .3s ease;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 3.5rem;
+    color: white;
+    width: 150px;
+    transition: .1s all;
+}
+
+.btn-modal:hover{
+    background-color: rgb(84, 81, 81);
+    cursor: pointer;
+}
+
+
+
