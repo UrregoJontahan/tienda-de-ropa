@@ -13,6 +13,9 @@ function Modal({ product, onClose }){
               <div className="container">
                   <div className="description">
                   <img src={product.image} className="image-modal" />
+                    <p className="title">
+                        {product.title}
+                    </p>
                     <p className="price-modal">${product.price}</p>
                     <button className="btn-modal">
                         Agregar al carrito

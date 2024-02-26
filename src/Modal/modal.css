@@ -16,8 +16,10 @@
 
 .container{
     display: flex;
+    position: relative;
+    top: 2rem;
     width: 800px;
-    height: 600px;
+    height: 700px;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -41,38 +43,23 @@
     align-items: center;
     font-size: 20px;
     width: 700px;
-    height: 500px;
+    height:auto;
 }
 
 .description-text{
     color: rgb(10, 10, 10);
-    position: fixed;
+    position:fixed;
     display: flex;
-    top: 28rem;
+    top: 30rem;
     width: 500px;
     height: auto;
 }
 
-.details{
-    position: relative;
-    display: flex;
-    left: .5rem;
-    border-radius: 5px;
-    border: 1px solid rgb(76, 73, 73);
-    transition: .2s ease;
-}
-
-.details:hover{
-    background-color: rgb(94, 91, 91);
-    color: white;
-    box-shadow: 1px 2px 10px 1px grey;
-}
-
-
 .closed{
-    position: relative;
-    bottom: 14.5rem;
-    left: 55%;
+    z-index: 1;
+    position: absolute;
+    top: 6rem;
+    right: 18rem;
     display:flex ;
     align-items: center;
     align-items: center;
@@ -94,16 +81,15 @@
 
 .price-modal{
     display: flex;
-    position: fixed;
-    top: 20.5rem;
-    left: 38rem;
+    position: absolute;
     color: black;
     font-weight: bold;
     font-size: 30px;
+    top:2rem ;
 }
 
 .btn-modal{
-    position: relative;
+    position: absolute;
     height: 2rem;
     background-color: rgb(19, 18, 18);
     transition: .3s ease;
@@ -113,7 +99,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 3.5rem;
+    top: 6rem;
     color: white;
     width: 150px;
     transition: .1s all;
@@ -124,5 +110,12 @@
     cursor: pointer;
 }
 
+.title{
+    color: black;
+    position: relative;
+    font-weight: bold;
+    font-size: 25px;
+    bottom: 1rem;
+}
 
 

@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import "./listProducts.css"
 import { DataContext } from "../Provider";
 import { Modal } from "../Modal";
+import TruncateText from "./truncateTitle";
 
 function ListProducts({ showDetails }){
 
@@ -14,16 +15,17 @@ function ListProducts({ showDetails }){
                     key={product.id}
                 >
                     <img 
-                    className="images-producs"
-                    src={product.image}
+                        className="images-producs"
+                        src={product.image}
+                        onClick={()=>showDetails(product)}
                     />
+                    <div className="container-title">
+                        <p className="title-product">
+                            <TruncateText text={product.title}  maxLength={10}/>
+                        </p>
+                    </div>
                     <div className="price">
                         {"Price: "+"$" + product.price}
-                        <button className="details"
-                            onClick={()=>showDetails(product)}
-                        >
-                            see details
-                        </button>
                     </div>
                     <button
                     className="add-cart">

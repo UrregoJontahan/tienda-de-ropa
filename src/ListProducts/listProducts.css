@@ -20,7 +20,7 @@
     left: 3rem;
     align-items: center;
     cursor: pointer;
-    box-shadow: 5px 3px 15px 2px rgb(211, 209, 209);
+    box-shadow: 5px 3px 15px 2px rgb(211, 209, 209); 
 }
 
 .images-producs{
@@ -32,6 +32,17 @@
 .images-producs img{
     width: 100%;
     height: auto;
+}
+
+.container-title{
+    width: 150px;
+    height: 50px;
+    white-space: nowrap;
+}
+
+.title-product{
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .add-cart{

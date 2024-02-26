@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "./category.css"
 import { DataContext } from "../Provider";
 
-function Category(){
+function Category(onSelect){
     const {categories} = useContext(DataContext)
 
     return(
@@ -13,6 +13,7 @@ function Category(){
                 <li 
                   key={category}
                   className="list-categories"
+                  // onClick={onSelect(category)}
                 >{category}</li>
             ))}
           </ul>

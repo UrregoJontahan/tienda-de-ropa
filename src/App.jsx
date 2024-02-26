@@ -4,14 +4,19 @@ import { Header } from './Header';
 import { InputSearch } from './Search';
 import { ListProducts } from './ListProducts';
 import { Category } from './Categories/Category';
-import { User } from './Users/User';
+import { User } from './Users';
 import { Modal } from './Modal';
 
 function App() {
     const [details, setDetails] = useState(null)
+    const [categories, setCategories] = useState([])
     
     const showDetails=(product)=>{
         setDetails(product)
+    }
+
+    const onSelect=(category)=>{
+        setCategories(category)
     }
 
  return (
@@ -20,11 +25,15 @@ function App() {
         <DataProvider>
             <User/>
             <InputSearch />
-            <ListProducts showDetails={showDetails}/>
-            <Category/>
+            <ListProducts 
+                showDetails={showDetails}/>
+            <Category 
+                onSelect={onSelect}/>
+            
             {details && <Modal product={details}
                 onClose={()=>setDetails(null)}
             />}
+
         </DataProvider>
      </React.Fragment>
  )
