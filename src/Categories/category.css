@@ -20,6 +20,7 @@
     align-items: baseline;
     margin-bottom: 10px;
     transition:.3s all;
+    cursor: pointer;
 }
 
 .list-categories:hover{

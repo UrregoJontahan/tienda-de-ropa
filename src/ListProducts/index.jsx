@@ -4,13 +4,17 @@ import { DataContext } from "../Provider";
 import { Modal } from "../Modal";
 import TruncateText from "./truncateTitle";
 
-function ListProducts({ showDetails }){
+function ListProducts({ showDetails, selectedCategory }){ 
 
     const {filterProducts} = useContext(DataContext)
 
+        const filteredProducts = filterProducts.filter((product) =>
+          product.category.includes(selectedCategory)
+        );
+
     return(
         <div className="container-images">
-            {filterProducts.map((product)=>(
+            {filteredProducts.map((product)=>(
                 <div className="card"
                     key={product.id}
                 >

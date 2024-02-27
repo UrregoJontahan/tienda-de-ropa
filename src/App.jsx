@@ -15,7 +15,7 @@ function App() {
         setDetails(product)
     }
 
-    const onSelect=(category)=>{
+    const handleCategorySelect = (category) =>{
         setCategories(category)
     }
 
@@ -26,10 +26,12 @@ function App() {
             <User/>
             <InputSearch />
             <ListProducts 
-                showDetails={showDetails}/>
+                showDetails={showDetails}
+                selectedCategory={categories}   
+            />
             <Category 
-                onSelect={onSelect}/>
-            
+                onSelect={handleCategorySelect}
+            />
             {details && <Modal product={details}
                 onClose={()=>setDetails(null)}
             />}

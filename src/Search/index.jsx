@@ -10,8 +10,6 @@ function InputSearch(){
         handleSearchChange(e.target.value)
     }
 
-
-
     return(
         <div>
             <input type="search" 
