@@ -1,0 +1,35 @@
+.icon-cart{
+    z-index: 1;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 1rem;
+    right: 3rem;
+    font-size: 50px;
+    transition: all .2s;
+}
+
+.icon-cart:hover{
+    color: rgb(175, 221, 221);
+}
+
+.in-cart{
+    position: absolute;
+    display: flex;
+    bottom: 1.5rem;
+    left: 1.9rem;
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.text-cart{
+    font-size: 13px;
+    font-weight: bold;
+}

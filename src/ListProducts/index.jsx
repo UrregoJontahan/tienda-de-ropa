@@ -1,10 +1,9 @@
 import React, { useContext, useState } from "react";
 import "./listProducts.css"
 import { DataContext } from "../Provider";
-import { Modal } from "../Modal";
 import TruncateText from "./truncateTitle";
 
-function ListProducts({ showDetails, selectedCategory }){ 
+function ListProducts({ showDetails, selectedCategory , addCart }){ 
 
     const {filterProducts} = useContext(DataContext)
 
@@ -32,7 +31,9 @@ function ListProducts({ showDetails, selectedCategory }){
                         {"Price: "+"$" + product.price}
                     </div>
                     <button
-                    className="add-cart">
+                        className="add-cart"
+                        onClick={()=>addCart(product)}
+                    >
                         <p className="text">Agregar al carrito</p>
                     </button>
                 </div>
