@@ -16,11 +16,20 @@ function Modal({ product, onClose, addCart }){
                         {product.title}
                     </p>
                     <p className="price-modal">${product.price}</p>
+                    <div className="quantity">
+                        <label htmlFor="quantity">Quantity Total:</label>
+                        <input
+                            className="quantity-btn"
+                            type="number"
+                            min="1"
+                        />
+                    </div>
                     <button className="btn-modal" 
                          onClick={()=>addCart(product)}
                     >
-                        Agregar al carrito
+                        Add Cart
                     </button>
+
                     <p className="description-text">{product.description}</p>
               </div>
             )}

@@ -14,6 +14,7 @@
         color: white;
         font-size: 30px;
     }
+
 }
 
 .Modal{
@@ -86,7 +87,7 @@
     justify-content: center;
     font-weight: bold;
     font-size: 25px;
-    top:3rem;
+    top:2rem;
 }
 
 .price-modal{
@@ -95,7 +96,17 @@
     color: black;
     font-weight: bold;
     font-size: 30px;
-    top:1rem ;
+}
+
+.quantity{
+    color: black;
+    font-size: 20px;
+    position: relative;
+    bottom: 1.5rem;
+}
+
+.quantity-btn{
+    width: 2rem;
 }
 
 .btn-modal{
@@ -112,6 +123,7 @@
     color: white;
     width: 150px;
     transition: .1s all;
+    bottom: 1rem;
 }
 
 .btn-modal:hover{
@@ -124,6 +136,7 @@
     position:relative;
     display: flex;
     font-size: 20px;
+    bottom: 1rem;
     width: 500px;
     height: auto;
 }
