@@ -7,7 +7,7 @@ import { Category } from './Categories/Category';
 import { User } from './Users';
 import { Modal } from './Modal';
 import { Cart } from './AddCart';
-import { ProductsAddCart } from './AddCart/ProductsSelected';
+import { ProductsAddCart } from './ProductsSElected/ProductsAdd';
 
 function App() {
 
@@ -16,8 +16,8 @@ function App() {
     const [cart, setCart] = useState([])
     const [openModal, setOpenModal] = useState(false)
     const [clonedProduct, setClonedProduct] = useState([])
+    const [quantityProducts, setQuantityProducts] = useState({})
 
-    
     const showDetails=(product) => {
         setDetails(product)
     }
@@ -26,9 +26,16 @@ function App() {
         setCategories(category)
     }
 
-    const addCart = (product) => {
-         setCart([...cart,product])
-         setClonedProduct([...clonedProduct,product])
+    const addCart = (product, selectedQuantity) => {
+        const productWithQuantity = {...product, quantity: selectedQuantity}
+
+         setCart([...cart, productWithQuantity])
+         setClonedProduct([...clonedProduct, product])
+    }
+
+    const handleChangeQuantity = (productId, selectedQuantity) =>{
+        const newQuantities={...quantityProducts, [productId] :selectedQuantity}
+        setQuantityProducts(newQuantities)
     }
 
  return (
@@ -42,6 +49,7 @@ function App() {
              {openModal && (
                 <ProductsAddCart
                     cartItem={clonedProduct}
+                    quantity={quantityProducts}
                 />
              )}
             </Cart>
@@ -58,6 +66,7 @@ function App() {
             {details && <Modal product={details}
                 onClose={()=>setDetails(null)}
                 addCart={addCart}
+                onQuantity={handleChangeQuantity}
             />}
                 
         </DataProvider>
