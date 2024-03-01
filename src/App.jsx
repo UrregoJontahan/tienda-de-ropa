@@ -7,13 +7,16 @@ import { Category } from './Categories/Category';
 import { User } from './Users';
 import { Modal } from './Modal';
 import { Cart } from './AddCart';
-import { useEffect } from 'react';
+import { ProductsAddCart } from './AddCart/ProductsSelected';
 
 function App() {
 
     const [details, setDetails] = useState(null)
     const [categories, setCategories] = useState([])
     const [cart, setCart] = useState([])
+    const [openModal, setOpenModal] = useState(false)
+    const [clonedProduct, setClonedProduct] = useState([])
+
     
     const showDetails=(product) => {
         setDetails(product)
@@ -25,13 +28,23 @@ function App() {
 
     const addCart = (product) => {
          setCart([...cart,product])
+         setClonedProduct([...clonedProduct,product])
     }
 
  return (
      <React.Fragment>
         <Header/>
-        <Cart count={cart.length}/>
         <DataProvider>
+            <Cart 
+                onToggle={()=>{setOpenModal((state)=>!state)}}
+                count={cart.length}    
+            >
+             {openModal && (
+                <ProductsAddCart
+                    cartItem={clonedProduct}
+                />
+             )}
+            </Cart>
             <User/>
             <InputSearch />
             <ListProducts 
@@ -46,7 +59,7 @@ function App() {
                 onClose={()=>setDetails(null)}
                 addCart={addCart}
             />}
-
+                
         </DataProvider>
      </React.Fragment>
  )

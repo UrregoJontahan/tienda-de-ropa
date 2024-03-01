@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./listProducts.css"
 import { DataContext } from "../Provider";
-import TruncateText from "./truncateTitle";
+import TruncateText from "../truncateTitle";
 
 function ListProducts({ showDetails, selectedCategory , addCart }){ 
 

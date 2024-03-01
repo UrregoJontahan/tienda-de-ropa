@@ -43,7 +43,7 @@ const filterProducts = products.filter(
     }
     ); 
 
-  return (
+  return ( 
     <DataContext.Provider value = {{  products , categories , user , handleSearchChange , filterProducts }}>
         {children} 
     </DataContext.Provider>
