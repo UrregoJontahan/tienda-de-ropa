@@ -32,7 +32,7 @@ function ListProducts({ showDetails, selectedCategory , addCart }){
                     </div>
                     <button
                         className="add-cart"
-                        onClick={()=>addCart(product)}
+                        onClick={()=>addCart(product, 1)}
                     >
                         <p className="text">Agregar al carrito</p>
                     </button>

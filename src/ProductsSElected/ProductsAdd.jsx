@@ -25,12 +25,12 @@ function ProductsAddCart({ cartItem, quantity }) {
               <TruncateText text={product.title} maxLength={10} />
             </h2>
             <p className="price-product">${product.price}</p>
-            <p className="count">Quantity: {quantity[product.id]}</p>
+            <p className="count">Quantity: {product.quantity}</p>
           </li>
         ))}
       </ul>
       <div className="total-cost">
-        <p>Total Cost: ${calculateTotalCost()}</p>
+        <p className="total-cost">Total Cost: ${calculateTotalCost()}</p>
       </div>
     </div>
   );
