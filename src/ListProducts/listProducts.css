@@ -1,7 +1,9 @@
 .container-images{
+    width: 80%;
     position: relative;
     display: flex;
-    padding: 9rem;
+    left: 8rem;
+    padding: 1rem;
     flex-flow: row wrap;
     justify-content: center;
     height: auto;
