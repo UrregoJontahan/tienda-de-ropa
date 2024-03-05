@@ -97,15 +97,15 @@ function App() {
                             <>
                             <Routes>
                                 <Route
-                                   path="/description-product" 
-                                   element={()=><Modal product={details}
+                                   path="/AddCart" 
+                                   element={<Modal product={details}
                                    onClose={() => setDetails(null)} 
                                    addCart={addCart} 
                                    onQuantity={handleChangeQuantity} />}
                                 />
                                  <Route
                                    path="/" 
-                                   element={()=><ListProducts/>}
+                                   element={<ListProducts/>}
                                 />
                                 
                             </Routes>
@@ -119,5 +119,3 @@ function App() {
 }
 
 export default App;
-
-

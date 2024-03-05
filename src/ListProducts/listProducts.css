@@ -5,6 +5,7 @@
     flex-flow: row wrap;
     justify-content: center;
     height: auto;
+    margin-bottom: 5rem;
 }
 
 .card{

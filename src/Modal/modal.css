@@ -1,10 +1,10 @@
 @media screen and (min-width: 1400px) and (min-height: 850px){
     .closed{
         z-index: 1;
-        position: relative;
+        position: absolute;
         display:flex ;
-        bottom: 35%;
-        left: 40%;
+        left: 45%;
+        bottom: 6rem;
         justify-content: center;
         width: 40px;
         height: 40px;
@@ -17,27 +17,12 @@
 
 }
 
-.Modal{
-    align-items: center;
+.closed{
     z-index: 15;
     position: fixed;
-    display: flex;
-    justify-content: center;
-    background-color: rgba(159, 155, 155, 0.973);
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    color: white;
-    font-size: 50px;
-}
-
-.closed{
-    z-index: 1;
-    position: relative;
     display:flex ;
-    bottom: 45%;
-    left: 55%;
+    left: 65%;
+    top: 3rem;
     justify-content: center;
     width: 40px;
     height: 40px;
@@ -57,17 +42,25 @@
 
 .container{
     display: flex;
+    z-index: 20;
     flex-direction: column;
-    position: relative;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     justify-content: center;
     text-align: center;
-    width: 800px;
-    height: 800px;
+    width: 100%;
+    height: auto;
     align-items: center;
     border-radius: 15px;
     box-shadow: 0px 5px 15px 2px rgb(97, 96, 96);
     background-color: rgb(230, 224, 224);
     overflow: hidden;
+    .closed{
+        z-index: 5;
+    }
 }
 
 .image-modal{

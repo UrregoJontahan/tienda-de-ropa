@@ -11,12 +11,12 @@ function Modal({ product, onClose, addCart, onQuantity}){
       };
     return (
         <div className="Modal">
-            <button className="closed" onClick={onClose}>
-                x
-            </button>
             {product && (
               <div className="container">
-                  <img src={`/${product.image}`} className="image-modal" />
+                <button className="closed" onClick={onClose}>
+                    x
+                </button>
+                  <img src={product.image} className="image-modal" />
                     <p className="title">
                         {product.title}
                     </p>
@@ -36,7 +36,7 @@ function Modal({ product, onClose, addCart, onQuantity}){
                     <button className="btn-modal" 
                          onClick={()=>addCart(product,selectedQuantity)}
                     >
-                        Add Cart
+                        AddCart
                     </button>
 
                     <p className="description-text">{product.description}</p>
