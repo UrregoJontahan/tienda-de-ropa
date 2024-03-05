@@ -4,13 +4,13 @@ import "./empty.css"
 function Empty(){
     return(
         <div className="empty-loading">
-            <div class="loader">
-                <div class="wrapper">
-                    <div class="circle"></div>
-                    <div class="line-1"></div>
-                    <div class="line-2"></div>
-                    <div class="line-3"></div>
-                    <div class="line-4"></div>
+            <div className="loader">
+                <div className="wrapper">
+                    <div className="circle"></div>
+                    <div className="line-1"></div>
+                    <div className="line-2"></div>
+                    <div className="line-3"></div>
+                    <div className="line-4"></div>
                 </div>
             </div>
         </div>

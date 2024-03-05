@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import TruncateText from "../truncateTitle";
 import "./productsSelected.css";
 
-function ProductsAddCart({ cartItem, quantity }) {
+function ProductsAddCart({ cartItem, quantity, onRemove }) {
   
     const calculateTotalCost = () => {
     let totalCost = 0;
@@ -26,6 +26,9 @@ function ProductsAddCart({ cartItem, quantity }) {
             </h2>
             <p className="price-product">${product.price}</p>
             <p className="count">Quantity: {product.quantity}</p>
+            <span className="remove-product"
+              onClick={()=>onRemove(product.id)}
+            >X</span>
           </li>
         ))}
       </ul>

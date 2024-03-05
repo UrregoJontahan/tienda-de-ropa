@@ -1,5 +1,4 @@
-import React, { useContext, useState } from "react";
-import { createPortal } from "react-dom";
+import React,{  useState } from "react";
 import "./modal.css"
 
 function Modal({ product, onClose, addCart, onQuantity}){
@@ -10,17 +9,14 @@ function Modal({ product, onClose, addCart, onQuantity}){
         setSelectedQuantity(newQuantity);
         onQuantity(product.id, newQuantity);
       };
-      
-    
-
-    return createPortal(
+    return (
         <div className="Modal">
             <button className="closed" onClick={onClose}>
                 x
             </button>
             {product && (
               <div className="container">
-                  <img src={product.image} className="image-modal" />
+                  <img src={`/${product.image}`} className="image-modal" />
                     <p className="title">
                         {product.title}
                     </p>
@@ -46,8 +42,7 @@ function Modal({ product, onClose, addCart, onQuantity}){
                     <p className="description-text">{product.description}</p>
               </div>
             )}
-        </div>,
-        document.getElementById("modal")
+        </div>
     )
 }
 
