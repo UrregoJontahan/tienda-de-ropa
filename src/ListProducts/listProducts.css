@@ -41,11 +41,6 @@
     white-space: nowrap;
 }
 
-.title-product{
-    font-size: 25px;
-    font-weight: bold;
-}
-
 .add-cart{
     position: relative;
     margin: .5rem;
@@ -84,6 +79,37 @@
     color: rgb(5, 5, 5);
     font-weight: bold;
     top: .5rem;
+}
+
+.tooltiptext {
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  height: auto;
+  font-size: 15px;
+  background-color: #cbcbcb;
+  color: #0f0e0e;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 6.5rem;
+  opacity: 0;
+  margin: 0; 
+  transition: opacity 0.5s;
+  white-space: pre-wrap; 
+  
+}
+
+.title-product{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.title-product:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 
 

@@ -31,6 +31,7 @@ function ListProducts({ showDetails, selectedCategory , addCart }){
                     />
                     <div className="container-title">
                         <p className="title-product">
+                            <div className="tooltiptext">{product.title}</div>
                             <TruncateText text={product.title}  maxLength={10}/>
                         </p>
                     </div>
@@ -41,7 +42,7 @@ function ListProducts({ showDetails, selectedCategory , addCart }){
                         className="add-cart"
                         onClick={()=>addCart(product, 1)}
                     >
-                        <p className="text">Agregar al carrito</p>
+                        <p className="text">Agregar al carrito</p> 
                     </button>
                 </div>
             ))}

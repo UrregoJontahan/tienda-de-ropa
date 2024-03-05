@@ -1,0 +1,56 @@
+.container-data{
+    position: fixed;
+    top: 5rem;
+    right: 3rem;
+    background-color: rgb(242, 238, 238);
+    width: 250px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px 0px black;
+}
+
+.arrow{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    top: 4.8rem;
+    right: 7.2rem;
+    transform: rotate(45deg);
+}
+
+.container-data-user{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    left:.5rem;
+    margin: 5px;
+    padding: .3rem;
+    bottom: .8rem;
+}
+
+.user-name{
+    position: relative;
+    margin-bottom:-3px    
+}
+
+.name{
+    position: relative;
+    margin-bottom:-5px
+}
+
+.email{
+    position: relative;
+    margin-bottom:-5px
+}
+
+.phone{
+    position: relative;
+    margin-bottom:-5px
+}
+
+.city{
+    position: relative;
+    margin-bottom:-5px
+}

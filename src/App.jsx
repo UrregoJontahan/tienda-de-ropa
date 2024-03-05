@@ -11,12 +11,14 @@ import { Cart } from './AddCart';
 import { ProductsAddCart } from './ProductsSElected/ProductsAdd';
 import { Empty } from './EmptyProducst';
 import { useEffect } from 'react';
+import { DataUser } from './Users/DataUser';
 
 function App() {
     const [details, setDetails] = useState(null);
     const [categories, setCategories] = useState([]);
     const [cart, setCart] = useState([]);
     const [openModal, setOpenModal] = useState(false);
+    const [openDataUser, setOpenDataUser] = useState(false)
     const [clonedProduct, setClonedProduct] = useState([]);
     const [quantityProducts, setQuantityProducts] = useState({});
     const [loading, setLoading] = useState(true);
@@ -89,7 +91,11 @@ function App() {
                             />
                             )}
                     </Cart>
-                    <User />
+                    <User ontoggleUser={() => setOpenDataUser((state) => !state)}>
+                        {openDataUser && (
+                            <DataUser/>
+                        )}
+                    </User>
                     <InputSearch />
                     {loading ? (
                         <Empty />
@@ -99,9 +105,10 @@ function App() {
                                 <Route
                                    path="/AddCart" 
                                    element={<Modal product={details}
-                                   onClose={() => setDetails(null)} 
                                    addCart={addCart} 
-                                   onQuantity={handleChangeQuantity} />}
+                                   onQuantity={handleChangeQuantity} 
+                                   onClose={() => setDetails(null)}
+                                   />}
                                 />
                                  <Route
                                    path="/" 
