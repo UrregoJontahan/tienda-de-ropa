@@ -3,11 +3,13 @@
     position: relative;
     display: flex;
     left: 8rem;
+    top: 7rem;
     padding: 1rem;
     flex-flow: row wrap;
     justify-content: center;
     height: auto;
     margin-bottom: 5rem;
+    overflow: hidden;
 }
 
 .card{
@@ -24,6 +26,8 @@
     align-items: center;
     cursor: pointer;
     box-shadow: 5px 3px 15px 2px rgb(211, 209, 209); 
+    text-decoration: none;
+    color: black;
 }
 
 .images-producs{

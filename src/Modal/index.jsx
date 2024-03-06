@@ -1,7 +1,7 @@
 import React,{  useState } from "react";
 import "./modal.css"
 
-function Modal({ product, onClose, addCart, onQuantity}){
+function Modal({ product, addCart, onQuantity}){
     const [selectedQuantity, setSelectedQuantity] = useState(1)
 
     const handleQuantityChange = (event) => {
@@ -13,9 +13,6 @@ function Modal({ product, onClose, addCart, onQuantity}){
         <div className="Modal">
             {product && (
               <div className="container">
-                <button className="closed" onClick={onClose}>
-                    x
-                </button>
                   <img src={product.image} className="image-modal" />
                     <p className="title">
                         {product.title}

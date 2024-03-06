@@ -2,10 +2,9 @@ import React, { useContext, useState } from "react";
 import "./listProducts.css"
 import { DataContext } from "../Provider";
 import TruncateText from "../truncateTitle";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function ListProducts({ showDetails, selectedCategory , addCart }){ 
-    const navigate = useNavigate()
 
     const {filterProducts} = useContext(DataContext)
 
@@ -15,13 +14,12 @@ function ListProducts({ showDetails, selectedCategory , addCart }){
 
         const handleProductClick = (product) => {
             showDetails(product);
-            navigate(`/AddCart`);
         };
 
     return(
         <div className="container-images">
             {filteredProducts.map((product)=>(
-                <div className="card"
+                <Link to={`AddCart/${product.id}`} className="card"
                     key={product.id}
                 >
                     <img 
@@ -30,10 +28,10 @@ function ListProducts({ showDetails, selectedCategory , addCart }){
                         onClick={()=>handleProductClick(product)}
                     />
                     <div className="container-title">
-                        <p className="title-product">
+                        <div className="title-product">
                             <div className="tooltiptext">{product.title}</div>
                             <TruncateText text={product.title}  maxLength={10}/>
-                        </p>
+                        </div>
                     </div>
                     <div className="price">
                         {"Price: "+"$" + product.price}
@@ -44,7 +42,7 @@ function ListProducts({ showDetails, selectedCategory , addCart }){
                     >
                         <p className="text">Agregar al carrito</p> 
                     </button>
-                </div>
+                </Link>
             ))}
         </div>
     )

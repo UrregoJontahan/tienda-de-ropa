@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter,Routes,Route,Link } from 'react-router-dom';
 import { DataProvider } from './Provider';
 import { Header } from './Header';
 import { InputSearch } from './Search';
@@ -79,9 +79,7 @@ function App() {
     }, []);
 
     return (
-        <Router>
             <React.Fragment>
-                <Header />
                 <DataProvider>
                     <Category onSelect={handleCategorySelect} />
                     <Cart onToggle={() => setOpenModal((state) => !state)} count={cart.length}>
@@ -99,29 +97,21 @@ function App() {
                     <InputSearch />
                     {loading ? (
                         <Empty />
-                        ) : (
-                            <>
-                            <Routes>
-                                <Route
-                                   path="/AddCart" 
-                                   element={<Modal product={details}
-                                   addCart={addCart} 
-                                   onQuantity={handleChangeQuantity} 
-                                   onClose={() => setDetails(null)}
-                                   />}
-                                />
-                                 <Route
-                                   path="/" 
-                                   element={<ListProducts/>}
-                                />
-                                
-                            </Routes>
-                            <ListProducts showDetails={showDetails} selectedCategory={categories} addCart={addCart} />
-                        </>
+                        ) : (      
+                            <BrowserRouter>
+                                <Header/>
+                                <Routes>
+                                    <Route path='/' element={ <ListProducts showDetails={showDetails} selectedCategory={categories} addCart={addCart} />}/>
+                                    <Route path='AddCart/:id' 
+                                        element={<Modal product={details}
+                                        addCart={addCart} 
+                                        onQuantity={handleChangeQuantity} />}
+                                    />
+                                </Routes>
+                            </BrowserRouter>
                     )}
                 </DataProvider>
             </React.Fragment>
-        </Router>
     );
 }
 
