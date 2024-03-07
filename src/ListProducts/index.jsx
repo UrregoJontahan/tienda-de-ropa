@@ -13,9 +13,8 @@ function ListProducts({ showDetails, selectedCategory , addCart }){
           product.category.includes(selectedCategory)
         );
 
-        const handleProductClick = async (productId) => {
-            const singleProduct = await getSingleProduct(productId)
-            showDetails(singleProduct);
+        const handleProductClick = (product) => {
+            showDetails(product);
         };
 
     return(
@@ -27,7 +26,7 @@ function ListProducts({ showDetails, selectedCategory , addCart }){
                     <img  
                         className="images-producs"
                         src={product.image}
-                        onClick={()=>handleProductClick(product.id)}
+                        onClick={()=>handleProductClick(product)}
                     />
                     <div className="container-title">
                         <div className="title-product">

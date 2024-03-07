@@ -6,12 +6,12 @@ import { InputSearch } from './Search';
 import { ListProducts } from './ListProducts';
 import { Category } from './Categories/Category';
 import { User } from './Users';
-import { Modal } from './Modal';
 import { Cart } from './AddCart';
 import { ProductsAddCart } from './ProductsSElected/ProductsAdd';
 import { Empty } from './EmptyProducst';
 import { useEffect } from 'react';
 import { DataUser } from './Users/DataUser';
+import { ModalRouter } from './ModalRouter';
 
 function App() {
     const [details, setDetails] = useState(null);
@@ -99,11 +99,11 @@ function App() {
                         <Empty />
                         ) : (      
                             <BrowserRouter>
-                                <Header/>
+                                    <Header/>
                                 <Routes>
                                     <Route path='' element={ <ListProducts showDetails={showDetails} selectedCategory={categories} addCart={addCart} />}/>
                                     <Route path='AddCart/:id' 
-                                        element={<Modal product={details}
+                                        element={<ModalRouter
                                         addCart={addCart} 
                                         onQuantity={handleChangeQuantity} />}
                                     />
