@@ -3,6 +3,7 @@ import "./listProducts.css"
 import { DataContext } from "../Provider";
 import TruncateText from "../truncateTitle";
 import { Link } from "react-router-dom";
+import { getSingleProduct } from "../Api";
 
 function ListProducts({ showDetails, selectedCategory , addCart }){ 
 
@@ -12,8 +13,9 @@ function ListProducts({ showDetails, selectedCategory , addCart }){
           product.category.includes(selectedCategory)
         );
 
-        const handleProductClick = (product) => {
-            showDetails(product);
+        const handleProductClick = async (productId) => {
+            const singleProduct = await getSingleProduct(productId)
+            showDetails(singleProduct);
         };
 
     return(
@@ -22,10 +24,10 @@ function ListProducts({ showDetails, selectedCategory , addCart }){
                 <Link to={`AddCart/${product.id}`} className="card"
                     key={product.id}
                 >
-                    <img 
+                    <img  
                         className="images-producs"
                         src={product.image}
-                        onClick={()=>handleProductClick(product)}
+                        onClick={()=>handleProductClick(product.id)}
                     />
                     <div className="container-title">
                         <div className="title-product">

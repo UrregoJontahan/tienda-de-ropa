@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter,Routes,Route,Link } from 'react-router-dom';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import { DataProvider } from './Provider';
 import { Header } from './Header';
 import { InputSearch } from './Search';
@@ -101,7 +101,7 @@ function App() {
                             <BrowserRouter>
                                 <Header/>
                                 <Routes>
-                                    <Route path='/' element={ <ListProducts showDetails={showDetails} selectedCategory={categories} addCart={addCart} />}/>
+                                    <Route path='' element={ <ListProducts showDetails={showDetails} selectedCategory={categories} addCart={addCart} />}/>
                                     <Route path='AddCart/:id' 
                                         element={<Modal product={details}
                                         addCart={addCart} 

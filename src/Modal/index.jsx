@@ -21,7 +21,7 @@ function Modal({ product, addCart, onQuantity}){
                     <div className="quantity">
                         <label htmlFor="quantity">
                                 Quantity Total:
-                        </label>
+                        </label> 
                         <input
                             className="quantity-btn"
                             type="number"
