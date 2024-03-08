@@ -3,7 +3,6 @@ import "./listProducts.css"
 import { DataContext } from "../Provider";
 import TruncateText from "../truncateTitle";
 import { Link } from "react-router-dom";
-import { getSingleProduct } from "../Api";
 
 function ListProducts({ showDetails, selectedCategory , addCart }){ 
 

@@ -12,6 +12,18 @@ async function getSingleProduct(id){
 return data;
 };
 
+async function categoriesApi(){
+  const response = await fetch  ("https://fakestoreapi.com/products/categories");
+  const jsonData = await response.json();
+  
+  return jsonData
+}
+
+async function singleCategory(selected) {
+  const response = await fetch(`https://fakestoreapi.com/products/category/${selected}`);
+  const jsonData = await response.json();
+  return jsonData
+}
 
 async function Users(){
   const response = await fetch  ("https://fakestoreapi.com/users/1");
@@ -20,11 +32,4 @@ async function Users(){
   return jsonData
 }
 
-async function categoriesApi(){
-  const response = await fetch  ("https://fakestoreapi.com/products/categories");
-  const jsonData = await response.json();
-
-return jsonData
-}
-
-export { useGetProductsApi, Users, categoriesApi, getSingleProduct };
+export { useGetProductsApi, Users, categoriesApi, getSingleProduct, singleCategory};

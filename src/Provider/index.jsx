@@ -19,7 +19,7 @@ const DataProvider = ({ children }) => {
     const data = await useGetProductsApi()
       setProducts(Array.isArray(data) ? data : [])
     }
-
+  
   const fetchCategories = async ()=>{
     const data = await categoriesApi()
       setCategories(Array.isArray(data) ? data : [])

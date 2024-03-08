@@ -4,7 +4,6 @@ import { DataProvider } from './Provider';
 import { Header } from './Header';
 import { InputSearch } from './Search';
 import { ListProducts } from './ListProducts';
-import { Category } from './Categories/Category';
 import { User } from './Users';
 import { Cart } from './AddCart';
 import { ProductsAddCart } from './ProductsSElected/ProductsAdd';
@@ -12,6 +11,7 @@ import { Empty } from './EmptyProducst';
 import { useEffect } from 'react';
 import { DataUser } from './Users/DataUser';
 import { ModalRouter } from './ModalRouter';
+import { CategoryRouter } from './CategoryRouter';
 
 function App() {
     const [details, setDetails] = useState(null);
@@ -29,7 +29,7 @@ function App() {
 
     const handleCategorySelect = (category) => {
         setCategories(category);
-        console.log(categories);
+        console.log("click en", category);
     };
 
 
@@ -81,7 +81,6 @@ function App() {
     return (
             <React.Fragment>
                 <DataProvider>
-                    <Category onSelect={handleCategorySelect} />
                     <Cart onToggle={() => setOpenModal((state) => !state)} count={cart.length}>
                         {openModal && (
                             <ProductsAddCart cartItem={clonedProduct} quantity={quantityProducts} 
@@ -95,6 +94,7 @@ function App() {
                         )}
                     </User>
                     <InputSearch />
+                    
                     {loading ? (
                         <Empty />
                         ) : (      
@@ -107,6 +107,7 @@ function App() {
                                         addCart={addCart} 
                                         onQuantity={handleChangeQuantity} />}
                                     />
+                                    <Route path='Category/:selected' element={<CategoryRouter onSelect={handleCategorySelect}/>} />
                                 </Routes>
                             </BrowserRouter>
                     )}

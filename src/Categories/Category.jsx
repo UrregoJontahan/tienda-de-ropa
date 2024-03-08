@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "./category.css";
 import { DataContext } from "../Provider";
+import { Link, useNavigate } from "react-router-dom";
 
 function Category({ onSelect }) {
   const { categories } = useContext(DataContext);
@@ -19,7 +20,7 @@ function Category({ onSelect }) {
             className="list-categories"
             onClick={()=>handleCategoryClick(category)}
           >
-            {category}
+            <Link to={`Category/${category}`}>{category}</Link>
           </li>
         ))}
       </ul>
