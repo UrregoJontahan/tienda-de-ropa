@@ -11,8 +11,7 @@ import { Empty } from './EmptyProducst';
 import { useEffect } from 'react';
 import { DataUser } from './Users/DataUser';
 import { ModalRouter } from './ModalRouter';
-import { CategoryRouter } from './CategoryRouter';
-
+import { Category } from './Categories/Category';
 function App() {
     const [details, setDetails] = useState(null);
     const [categories, setCategories] = useState([]);
@@ -29,7 +28,7 @@ function App() {
 
     const handleCategorySelect = (category) => {
         setCategories(category);
-        console.log("click en", category);
+        ("click en", category);
     };
 
 
@@ -100,14 +99,18 @@ function App() {
                         ) : (      
                             <BrowserRouter>
                                     <Header/>
+                                    <Category onSelect={handleCategorySelect}/>
                                 <Routes>
-                                    <Route path='' element={ <ListProducts showDetails={showDetails} selectedCategory={categories} addCart={addCart} />}/>
-                                    <Route path='AddCart/:id' 
+                                    <Route 
+                                        path='/:categorie?' 
+                                        element={ <ListProducts showDetails={showDetails} selectedCategory={categories} addCart={addCart} />}/>
+                                    <Route 
+                                        path='AddCart/:id' 
                                         element={<ModalRouter
                                         addCart={addCart} 
                                         onQuantity={handleChangeQuantity} />}
                                     />
-                                    <Route path='Category/:selected' element={<CategoryRouter onSelect={handleCategorySelect}/>} />
+
                                 </Routes>
                             </BrowserRouter>
                     )}

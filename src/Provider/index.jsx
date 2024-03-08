@@ -6,6 +6,7 @@ const DataContext = createContext();
 const DataProvider = ({ children }) => {
   const [products, setProducts] = useState([])
   const [categories, setCategories] = useState([])
+  const [activeCategorie, setActiveCategory] = useState([])
   const [user, setUser] = useState([])
   const [searchProducts, setSearchProducts] = useState("")
 
@@ -44,7 +45,15 @@ const filterProducts = products.filter(
     ); 
 
   return ( 
-    <DataContext.Provider value = {{  products , categories , user , handleSearchChange , filterProducts }}>
+    <DataContext.Provider value = {{  
+      products, 
+      categories, 
+      user, 
+      handleSearchChange, 
+      filterProducts,
+      activeCategorie,
+      setActiveCategory
+      }}>
         {children} 
     </DataContext.Provider>
   );

@@ -1,15 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./category.css";
 import { DataContext } from "../Provider";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Category({ onSelect }) {
-  const { categories } = useContext(DataContext);
-
+  const { categories, activeCategorie } = useContext(DataContext);
+ 
  const handleCategoryClick = ( selectedCategory ) =>{
     onSelect(selectedCategory)
  }
 
+ const isSameCategory = category => category === activeCategorie
+ 
   return (
     <div className="category-header">
       <ul>
@@ -17,10 +19,10 @@ function Category({ onSelect }) {
         {categories.map((category) => (
           <li
             key={category}
-            className="list-categories"
+            className={`list-categories ${isSameCategory(category) && 'active'}`}
             onClick={()=>handleCategoryClick(category)}
           >
-            <Link to={`Category/${category}`}>{category}</Link>
+            <Link to={category} className="no-link capitalize">{category}</Link>
           </li>
         ))}
       </ul>

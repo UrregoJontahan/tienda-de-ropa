@@ -29,3 +29,18 @@
     color: crimson;background-color: rgb(225, 222, 222);
     text-decoration: underline;
 }
+
+.active {
+    background-color: beige;
+    color: #6f5fe2;
+}
+
+.no-link {
+   text-decoration: none; 
+   color: black;
+   margin: 4px
+}
+
+.capitalize {
+    text-transform: capitalize;
+}

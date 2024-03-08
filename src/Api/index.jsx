@@ -1,5 +1,5 @@
-  async function useGetProductsApi(){
-    const response = await fetch("https://fakestoreapi.com/products");
+  async function useGetProductsApi(param = ''){
+    const response = await fetch("https://fakestoreapi.com/products/");
     const data = await response.json();
 
   return data;
@@ -19,7 +19,7 @@ async function categoriesApi(){
   return jsonData
 }
 
-async function singleCategory(selected) {
+export async function getProductsByCategory(selected) {
   const response = await fetch(`https://fakestoreapi.com/products/category/${selected}`);
   const jsonData = await response.json();
   return jsonData
@@ -32,4 +32,4 @@ async function Users(){
   return jsonData
 }
 
-export { useGetProductsApi, Users, categoriesApi, getSingleProduct, singleCategory};
+export { useGetProductsApi, Users, categoriesApi, getSingleProduct};

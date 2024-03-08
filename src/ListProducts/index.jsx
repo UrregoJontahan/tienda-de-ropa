@@ -1,25 +1,42 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./listProducts.css"
 import { DataContext } from "../Provider";
 import TruncateText from "../truncateTitle";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useGetProductsApi, getProductsByCategory } from "../Api";
 
-function ListProducts({ showDetails, selectedCategory , addCart }){ 
+function ListProducts({ showDetails, addCart }){ 
 
-    const {filterProducts} = useContext(DataContext)
+    const {setActiveCategory} = useContext(DataContext)
+    const [productsList, setProductsList] = useState([])
+    const { categorie } = useParams()
 
-        const filteredProducts = filterProducts.filter((product) =>
-          product.category.includes(selectedCategory)
-        );
+    useEffect(()=> {
+        getProducts(categorie)
+    }, [categorie])
 
-        const handleProductClick = (product) => {
-            showDetails(product);
-        };
+    useEffect(()=>{
+        setActiveCategory(categorie)
+    }, [categorie])
+
+    const getProducts = async (category) => {
+        if(category) {
+            let result = await getProductsByCategory(category)
+            setProductsList(result)
+        }else{
+            const list = await useGetProductsApi()
+            setProductsList(list)
+        }
+    }
+
+    const handleProductClick = (product) => {
+        showDetails(product);
+    };
 
     return(
         <div className="container-images">
-            {filteredProducts.map((product)=>(
-                <Link to={`AddCart/${product.id}`} className="card"
+            {productsList.map((product)=>(
+                <Link to={`/AddCart/${product.id}`} className="card"
                     key={product.id}
                 >
                     <img  
